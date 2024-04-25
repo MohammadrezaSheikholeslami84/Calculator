@@ -38,6 +38,6 @@ This repository contains a Java Swing-based calculator application that provides
 - Integrated Development Environment (IDE) such as IntelliJ IDEA or Eclipse (optional)
 
 
-## Author: $\textcolor{yellow}{Mohammadreza\ Sheikholeslami \}$
+## Author: $\textcolor{green}{Mohammadreza\ Sheikholeslami \}$
 
 Feel free to contribute to the project by submitting bug reports, feature requests, or pull requests. If you have any questions or suggestions, please open an issue. Thank you for using this calculator application!
