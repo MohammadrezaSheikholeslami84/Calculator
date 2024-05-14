@@ -23,7 +23,8 @@ This repository contains a Java Swing-based calculator application that provides
    ```
 4. The calculator application window will appear, allowing you to perform calculations using the graphical user interface.
    
-![image](https://github.com/MohammadrezaSheikholeslami84/Calculator/assets/166950228/ce3e03db-47a1-408e-aa90-892adf128596)
+![image](https://github.com/MohammadrezaSheikholeslami84/Calculator/assets/166950228/07a3266e-5f00-4536-b46e-84a68644a86c)
+
 
    
 
