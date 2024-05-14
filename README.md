@@ -9,6 +9,7 @@ This repository contains a Java Swing-based calculator application that provides
   - **Square Root:** Computes the square root of a number.
   - **Logarithm:** Calculates the logarithm of a number.
   - **Power:** Computes the power of a number.
+  -  **Abs:** Computes the abs of a number.
 - **User-Friendly Interface:** The GUI allows users to input numbers and perform calculations with ease.
 
 ## Usage:
@@ -23,7 +24,8 @@ This repository contains a Java Swing-based calculator application that provides
    ```
 4. The calculator application window will appear, allowing you to perform calculations using the graphical user interface.
    
-![image](https://github.com/MohammadrezaSheikholeslami84/Calculator/assets/166950228/ce3e03db-47a1-408e-aa90-892adf128596)
+![image](https://github.com/MohammadrezaSheikholeslami84/Calculator/assets/166950228/07a3266e-5f00-4536-b46e-84a68644a86c)
+
 
    
 
