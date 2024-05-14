@@ -8,10 +8,10 @@ public class Calculator implements ActionListener {
     JButton[] numberButtons = new JButton[10];
     JButton[] functionButtons = new JButton[5];
     JButton[] Arithmetic_Operations_Buttons = new JButton[4];
-    JButton[] AdditionalFunctionButtons = new JButton[6];
+    JButton[] AdditionalFunctionButtons = new JButton[7];
     JButton addButton, subButton, mulButton, divButton;
     JButton decimalButton, equalButton, deleteButton, clrButton, negativeButton, sqrtButton, logarithmButton, factorialButton, powButton;
-    JButton pow2,abs;
+    JButton pow2,abs , pow3;
     JPanel panel;
     Font myFont = new Font("Arial", Font.BOLD, 30);
     double num1 = 0, num2 = 0, result = 0;
@@ -21,7 +21,7 @@ public class Calculator implements ActionListener {
         frame = new JFrame("Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setBackground(Color.BLACK);
-        frame.setSize(700, 900);
+        frame.setSize(500, 700);
         frame.setLayout(null);
 
         textfield = new JTextField();
@@ -46,6 +46,7 @@ public class Calculator implements ActionListener {
         factorialButton = new JButton("!");
         powButton = new JButton("Pow");
         pow2 = new JButton("x²");
+        pow3 = new JButton("x^3");
         abs = new JButton("| x |");
 
         Arithmetic_Operations_Buttons[0] = addButton;
@@ -65,6 +66,7 @@ public class Calculator implements ActionListener {
         AdditionalFunctionButtons[3] = powButton;
         AdditionalFunctionButtons[4] = pow2;
         AdditionalFunctionButtons[5] = abs;
+        AdditionalFunctionButtons[6] = pow3;
 
 
         for (int i = 0; i < 4; i++) {
@@ -85,7 +87,7 @@ public class Calculator implements ActionListener {
             functionButtons[i].setFocusable(false);
         }
 
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 7; i++) {
             AdditionalFunctionButtons[i].addActionListener(this);
             AdditionalFunctionButtons[i].setBackground(Color.GRAY);
             AdditionalFunctionButtons[i].setForeground(Color.WHITE);
@@ -142,6 +144,7 @@ public class Calculator implements ActionListener {
         panel.add(logarithmButton);
 
         panel.add(pow2);
+        panel.add(pow3);
         panel.add(abs);
 
         frame.add(panel);
@@ -258,6 +261,10 @@ public class Calculator implements ActionListener {
         if (e.getSource() == abs){
             double number = Double.parseDouble(textfield.getText());
             textfield.setText(String.valueOf(Math.abs(number)));
+        }
+        if (e.getSource() == pow3){
+            double num1 = Double.parseDouble(textfield.getText());
+            textfield.setText(String.valueOf(Math.pow(num1,3)));
         }
     }
 
