@@ -8,9 +8,10 @@ public class Calculator implements ActionListener {
     JButton[] numberButtons = new JButton[10];
     JButton[] functionButtons = new JButton[5];
     JButton[] Arithmetic_Operations_Buttons = new JButton[4];
-    JButton[] AdditionalFunctionButtons = new JButton[4];
+    JButton[] AdditionalFunctionButtons = new JButton[6];
     JButton addButton, subButton, mulButton, divButton;
     JButton decimalButton, equalButton, deleteButton, clrButton, negativeButton, sqrtButton, logarithmButton, factorialButton, powButton;
+    JButton pow2,abs;
     JPanel panel;
     Font myFont = new Font("Arial", Font.BOLD, 30);
     double num1 = 0, num2 = 0, result = 0;
@@ -20,7 +21,7 @@ public class Calculator implements ActionListener {
         frame = new JFrame("Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setBackground(Color.BLACK);
-        frame.setSize(500, 700);
+        frame.setSize(700, 900);
         frame.setLayout(null);
 
         textfield = new JTextField();
@@ -44,6 +45,8 @@ public class Calculator implements ActionListener {
         logarithmButton = new JButton("Log");
         factorialButton = new JButton("!");
         powButton = new JButton("Pow");
+        pow2 = new JButton("x²");
+        abs = new JButton("| x |");
 
         Arithmetic_Operations_Buttons[0] = addButton;
         Arithmetic_Operations_Buttons[1] = subButton;
@@ -60,6 +63,9 @@ public class Calculator implements ActionListener {
         AdditionalFunctionButtons[1] = logarithmButton;
         AdditionalFunctionButtons[2] = factorialButton;
         AdditionalFunctionButtons[3] = powButton;
+        AdditionalFunctionButtons[4] = pow2;
+        AdditionalFunctionButtons[5] = abs;
+
 
         for (int i = 0; i < 4; i++) {
             Arithmetic_Operations_Buttons[i].addActionListener(this);
@@ -79,7 +85,7 @@ public class Calculator implements ActionListener {
             functionButtons[i].setFocusable(false);
         }
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 6; i++) {
             AdditionalFunctionButtons[i].addActionListener(this);
             AdditionalFunctionButtons[i].setBackground(Color.GRAY);
             AdditionalFunctionButtons[i].setForeground(Color.WHITE);
@@ -99,13 +105,15 @@ public class Calculator implements ActionListener {
 
         }
 
+
+
         negativeButton.setBounds(50, 550, 100, 50);
         deleteButton.setBounds(156, 550, 100, 50);
         clrButton.setBounds(262, 550, 100, 50);
 
         panel = new JPanel();
         panel.setBounds(50, 100, 400, 400);
-        panel.setLayout(new GridLayout(5, 4, 6, 6));
+        panel.setLayout(new GridLayout(6, 4, 6, 6));
         panel.setBackground(Color.black);
 
         panel.add(numberButtons[7]);
@@ -133,13 +141,17 @@ public class Calculator implements ActionListener {
         panel.add(factorialButton);
         panel.add(logarithmButton);
 
+        panel.add(pow2);
+        panel.add(abs);
+
         frame.add(panel);
 
         frame.add(negativeButton);
         frame.add(deleteButton);
         frame.add(clrButton);
         frame.add(textfield);
-
+//        frame.add(pow);
+//        frame.add(abs);
         frame.setVisible(true);
     }
 
@@ -156,6 +168,8 @@ public class Calculator implements ActionListener {
                 textfield.setText(textfield.getText().concat(String.valueOf(i)));
             }
         }
+
+
         if (e.getSource() == decimalButton) {
             textfield.setText(textfield.getText().concat("."));
         }
@@ -192,6 +206,8 @@ public class Calculator implements ActionListener {
             num1 = Double.parseDouble(textfield.getText());
             textfield.setText(String.valueOf(Math.log10(num1)));
         }
+
+
         if (e.getSource() == factorialButton) {
             num1 = Double.parseDouble(textfield.getText());
             textfield.setText(String.valueOf(fact((int) num1)));
@@ -234,6 +250,14 @@ public class Calculator implements ActionListener {
             double temp = Double.parseDouble(textfield.getText());
             temp *= -1;
             textfield.setText(String.valueOf(temp));
+        }
+        if (e.getSource() == pow2){
+            double number = Double.parseDouble(textfield.getText());
+               textfield.setText(String.valueOf(Math.pow(number, 2)));
+        }
+        if (e.getSource() == abs){
+            double number = Double.parseDouble(textfield.getText());
+            textfield.setText(String.valueOf(Math.abs(number)));
         }
     }
 
